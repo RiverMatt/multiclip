@@ -14,12 +14,20 @@ try:
     import pyautogui
 except ImportError as e:
     print(str(e))
-    with open('./multiclip.py.log', 'a') as f:
+    path = os.path.dirname(os.path.abspath(__file__))
+    logfile = os.path.join(
+        path,
+        'multiclip.py.log'
+        )
+    with open(logfile, 'a') as f:
         f.write(f'\n{datetime.now()}: {str(e)}\n')
     sys.exit()
 
 # File name for our dictionary; it should be stored in the user's home folder.
-filename = './clipboard_dict.json'
+filename = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    'clipboard_dict.json'
+    )
 
 # Load in the dictionary, or create the file and data if it isn't found.
 try:
