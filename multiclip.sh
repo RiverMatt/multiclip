@@ -1,6 +1,9 @@
 #!/bin/bash
 # Wrapper script for the multiclip.py program
 
-source "$(dirname "$0")/env/bin/activate"
+# Get the realpath to the script directory
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-python "$(dirname "$0")/multiclip.py" "$@"
+source "$SCRIPT_DIR/env/bin/activate"
+
+python "$SCRIPT_DIR/multiclip.py" "$@"
