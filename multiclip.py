@@ -23,7 +23,7 @@ except ImportError as e:
         f.write(f'\n{datetime.now()}: {str(e)}\n')
     sys.exit()
 
-# File name for our dictionary; it should be stored in the user's home folder.
+# File name for our dictionary; it should be stored in the script's folder.
 filename = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     'clipboard_dict.json'
