@@ -4,6 +4,6 @@
 # Get the realpath to the script directory
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 
-source "$SCRIPT_DIR/env/bin/activate"
+#source "$SCRIPT_DIR/env/bin/activate"
 
-python "$SCRIPT_DIR/multiclip.py" "$@"
+$SCRIPT_DIR/env/bin/python "$SCRIPT_DIR/multiclip.py" "$@"
