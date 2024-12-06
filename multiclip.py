@@ -12,13 +12,15 @@ try:
     import os
     import pyclip
     import pyautogui
-except ImportError as e:
-    print(str(e))
+
     path = os.path.dirname(os.path.abspath(__file__))
     logfile = os.path.join(
         path,
         'multiclip.py.log'
         )
+
+except ImportError as e:
+    print(str(e))
     with open(logfile, 'a') as f:
         f.write(f'\n{datetime.now()}: {str(e)}\n')
     sys.exit()
@@ -91,7 +93,7 @@ if len(sys.argv) < 2:
         'currently selected text.\n'
     )
     print(usage_instructions)
-    with open(f'{os.path.expanduser("~")}/multi_clipboard.py.log', 'a') as f:
+    with open(logfile, 'a') as f:
         f.write(f'\n{datetime.now()}: {usage_instructions}\n')
     sys.exit()
 
